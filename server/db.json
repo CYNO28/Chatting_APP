@@ -1,0 +1,6 @@
+{
+    "random":{
+        "name":"hello",
+        "age":"from json server"
+    }
+}
