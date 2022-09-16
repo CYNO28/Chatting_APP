@@ -33,6 +33,11 @@ background-color: #1e2223;
 animation-fill-mode: forwards;
 border-radius: 0 1rem 1rem 0;
 }
+.goright{
+  animation: goright 2s ease-in-out;
+  animation-fill-mode: forwards;
+  border-radius: 1rem 0 0 1rem;
+}
 @keyframes goleft {
   0%{
     width: 40%;
@@ -46,11 +51,7 @@ border-radius: 0 1rem 1rem 0;
     left:60%;
   }
 }
-.goright{
-  animation: goright 2s ease-in-out;
-  animation-fill-mode: forwards;
-  border-radius: 1rem 0 0 1rem;
-}
+
 @keyframes goright {
 0%{
   width: 40%;

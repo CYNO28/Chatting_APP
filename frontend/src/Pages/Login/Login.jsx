@@ -17,13 +17,16 @@ const Login = () => {
       ref.current.classList.add("goright");
       ref.current.classList.remove("goleft");
     }
-    setpostion(!postion);
+    setTimeout(() =>{
+
+      setpostion(!postion);
+    },700)
   }
   
   
 return (
     <div className={style.container}>
-      {postion ? <div className={style.rightbox}>
+      {postion ? <div className={style.rightbox} >
         <h2> Create Account</h2>
         <div className={style.iconbox}>
         <AiOutlineGooglePlus  className={style.roundicon}/>
@@ -45,7 +48,26 @@ return (
        <button className={style.btn}>SIGN UP</button>
         </div>
 
-      </div> : <div className={style.lefttbox}>
+      </div> : <div className={style.leftbox}>
+      <h2>  Login with us</h2>
+      <div className={style.iconbox}>
+        <AiOutlineGooglePlus  className={style.roundicon}/>
+        </div>
+        <p>or use your email for login</p>
+        <div className={style.form}>
+
+        <div className={style.inputspan}>
+          <MdOutlineEmail className={style.icon}/>
+        <input type="text" className={style.input} placeholder="Email"/>
+          </div>
+          <div className={style.inputspan}>
+          <VscLock className={style.icon}/>
+        <input type="text" className={style.input} placeholder="Password"/>
+          </div>
+          <p className={style.forgot}>Forgot your password ?</p>
+       <button className={style.btn}>SIGN IN</button>
+        </div>
+        
         </div>}
       <div ref={ref} className={`${style.overlay}`} style={postion?{borderRadius:"1rem 0 0 1rem"}:{borderRadius:"0 1rem 1rem 0"}}>
         {postion ? (

@@ -51,6 +51,9 @@
   padding: 10px 30px;
   font-size: 1rem;
   color: var(--white);
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;;
   border-radius: 2rem;
 }
 .right span {
@@ -102,70 +105,129 @@
   color: var(--green);
   font-size: 2rem;
 }
-.input{
-    border: none;
-    outline:none;
+.input {
+  border: none;
+  outline: none;
 }
-.form{
-    width: 100%;
-    display: flex;
-    flex-direction: column;;
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.inputspan{
-    border: 1px solid #ccc;
-    border-radius: .5rem;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    padding: 0px 5px;
-    font-size: 1.5rem;
-    align-items: center;
-    margin-top: .25rem;
-    margin-bottom: .25rem;
-
+.inputspan {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  padding: 0px 5px;
+  font-size: 1.5rem;
+  align-items: center;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
-.inputspan input{
-    padding:0  20px;
-    width: 80%;
-    height: 2.5rem;
-    
+.inputspan input {
+  padding: 0 20px;
+  width: 80%;
+  height: 2.5rem;
 }
 .icon {
-    color: var(--black);
-    font-size: 1.5rem;
-    opacity: .75;
+  color: var(--black);
+  font-size: 1.5rem;
+  opacity: 0.75;
 }
-.form .btn{
-    background-color: var(--green);
-    margin-top: 1rem;
-    width: 30%;
+.form .btn {
+  background-color: var(--green);
+  margin-top: 1rem;
+  width: 30%;
 }
-.btn:active{
-    transform: scaleX(1.15) scaleY(1.25) ;
-    transition-duration: 10ms;
+.btn:active {
+  transform: scaleX(1.15) scaleY(1.25);
+  transition-duration: 10ms;
 }
-.btn:hover{
-    background-color: var(--white);
-    border-color: #6fcf97;
-    color: var(--green);
-    font-weight: 600;
-    border: 2px solid var(--green);
-    cursor: pointer;
+.btn:hover {
+  background-color: var(--white);
+  border-color: #6fcf97;
+  color: var(--green);
+  font-weight: 600;
+  border: 2px solid var(--green);
+  cursor: pointer;
 }
-.roundicon{
-    font-size: 2rem;
-    color: #28364e;
-    border-radius: 50%;
-    padding: 4px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    margin-bottom: 1rem;
-    opacity: .75;
+.roundicon {
+  font-size: 2rem;
+  color: #28364e;
+  border-radius: 50%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  opacity: 0.75;
 }
-.rightbox>p:nth-child(3){
-color: rgb(158, 158, 158);
+.container>div > p:nth-child(3) {
+  color: rgb(158, 158, 158);
 
-margin-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.leftbox {
+  margin-right: 40%;
+  width: calc(60%);
+  height: calc(100%-4rem);
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem 0 0  1rem;
+}
+.leftbox h2{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--green);
+  font-size: 2rem;
+
+}
+.forgot{
+  font-size: 1rem;
+  cursor: pointer;
+  color: #28364e;
+  margin: .5rem;
+}
+.forgot:hover{
+  color: var(--green);
+}
+.rightbox{
+  animation: goright 1s forwards;
+
+}
+.leftbox{
+  animation: goleft 1s forwards;
+}
+@keyframes goleft {
+  0%{
+    margin-right: 70%;
+    width: 60%;
+  }
+  50%{
+    width: 50%;
+  }
+  100%{
+    margin-right: 40%;
+    width: 60%;
+  }
+}
+
+@keyframes goright {
+0%{
+  margin-left: 70%;
+  width: 60%;
+}
+50%{
+  width: 50%;
+}
+100%{
+  margin-left: 40%;
+  width: 60%;
+}
 }
