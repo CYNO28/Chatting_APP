@@ -25,6 +25,8 @@ const Login = () => {
   
   
 return (
+<div className={style.wrapper}>
+
     <div className={style.container}>
       {postion ? <div className={style.rightbox} >
         <h2> Create Account</h2>
@@ -105,6 +107,7 @@ return (
         )}
       </div>
     </div>
+        </div>
   );
 };
 
