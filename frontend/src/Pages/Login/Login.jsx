@@ -7,7 +7,7 @@ import { AiOutlineGooglePlus } from "react-icons/ai";
 
 import style from "./Login.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../Store/Auth/action";
+import { login, signup } from "../../Store/Auth/action";
 const Login = () => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -19,7 +19,9 @@ const Login = () => {
   function onLogin() {
     dispatch(login(Input));
   }
-  function onSignup() {}
+  function onSignup() {
+    dispatch(signup(Input));
+  }
   function onChangeHandler(e) {
     setInput({ ...Input, [e.target.name]: e.target.value });
   }
@@ -73,7 +75,7 @@ const Login = () => {
               <div className={style.inputspan}>
                 <VscLock className={style.icon} />
                 <input
-                  type="text"
+                  type="password"
                   className={style.input}
                   placeholder="Password"
                   onChange={onChangeHandler}
@@ -106,7 +108,7 @@ const Login = () => {
               <div className={style.inputspan}>
                 <VscLock className={style.icon} />
                 <input
-                  type="text"
+                  type="password"
                   className={style.input}
                   placeholder="Password"
                   onChange={onChangeHandler}

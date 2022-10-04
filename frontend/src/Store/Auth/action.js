@@ -11,3 +11,14 @@ export const login=(data) =>(dispatch)=>{
         console.log(data)
     })
 }
+export const signup=(data)=>(dispatch)=>{
+    fetch(`${link}/auth/signup`,{
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    }).then(r=>r.json()).then(data=>{
+        console.log(data)
+    })
+}
