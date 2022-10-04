@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef,FC } from "react";
 import { useState } from "react";
 import { BiUser } from "react-icons/bi";
 import { MdOutlineEmail } from "react-icons/md";
@@ -6,26 +6,9 @@ import { VscLock } from "react-icons/vsc";
 import { AiOutlineGooglePlus } from "react-icons/ai";
 
 import style from "./Login.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../Store/Auth/action";
-const Login = () => {
-  const state = useSelector((state) => state);
-  const dispatch = useDispatch();
-  const [Input, setInput] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
-  function onLogin() {
-    dispatch(login(Input));
-  }
-  function onSignup() {}
-  function onChangeHandler(e) {
-    setInput({ ...Input, [e.target.name]: e.target.value });
-  }
-
-  const ref = useRef();
-  const [postion, setpostion] = useState(true);
+const Login :FC = () => {
+  const ref = useRef()
+  const [postion, setpostion] = useState<boolean>(true);
   function ChangeHandler() {
     if (postion) {
       ref.current.classList.add("goleft");
@@ -52,13 +35,7 @@ const Login = () => {
             <div className={style.form}>
               <div className={style.inputspan}>
                 <BiUser className={style.icon} />
-                <input
-                  type="text"
-                  onChange={onChangeHandler}
-                  name="name"
-                  className={style.input}
-                  placeholder="Name"
-                />
+                <input type="text" className={style.input} placeholder="Name" />
               </div>
               <div className={style.inputspan}>
                 <MdOutlineEmail className={style.icon} />
@@ -66,8 +43,6 @@ const Login = () => {
                   type="text"
                   className={style.input}
                   placeholder="Email"
-                  onChange={onChangeHandler}
-                  name="email"
                 />
               </div>
               <div className={style.inputspan}>
@@ -76,13 +51,9 @@ const Login = () => {
                   type="text"
                   className={style.input}
                   placeholder="Password"
-                  onChange={onChangeHandler}
-                  name="password"
                 />
               </div>
-              <button onClick={onSignup} className={style.btn}>
-                SIGN UP
-              </button>
+              <button className={style.btn}>SIGN UP</button>
             </div>
           </div>
         ) : (
@@ -99,8 +70,6 @@ const Login = () => {
                   type="text"
                   className={style.input}
                   placeholder="Email"
-                  onChange={onChangeHandler}
-                  name="email"
                 />
               </div>
               <div className={style.inputspan}>
@@ -109,14 +78,10 @@ const Login = () => {
                   type="text"
                   className={style.input}
                   placeholder="Password"
-                  onChange={onChangeHandler}
-                  name="password"
                 />
               </div>
               <p className={style.forgot}>Forgot your password ?</p>
-              <button onClick={onLogin} className={style.btn}>
-                SIGN IN
-              </button>
+              <button className={style.btn}>SIGN IN</button>
             </div>
           </div>
         )}

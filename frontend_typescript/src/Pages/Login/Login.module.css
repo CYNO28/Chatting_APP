@@ -1,0 +1,254 @@
+:root {
+  --skyblue: #52fffe;
+  --purpel: #3852d1;
+  --black: #28364e;
+  --white: #ffffff;
+  --green: #6fcf97;
+}
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../../public/Assests/auth_wall.jpg');
+  background-size: cover;
+  display: block;
+  box-sizing: border-box;
+  padding: 2rem 0;
+  
+
+}
+.container {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65vw;
+  height: 70vh;
+  border-radius: 1rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  display: flex;
+  z-index: 1;
+  /* margin-top: 5%; */
+}
+
+
+.overlay {
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  /* background-color: var(--green); */
+  color: var(--white);
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: 	rgb(111, 207, 151,.75);
+  
+}
+
+.overlay h2 {
+  font-size: 2rem;
+  margin: 1rem;
+}
+.overlay div {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  width: 40%;
+  background-color: transparent;
+  border: 1px solid var(--white);
+  padding: 10px 30px;
+  font-size: 1rem;
+  color: var(--white);
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;;
+  border-radius: 2rem;
+}
+.right span {
+  animation: right 1s ease-in-out;
+}
+@keyframes right {
+  0% {
+    margin-left: -700px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+.left {
+  animation: left 1s ease-in-out;
+}
+
+@keyframes left {
+  0% {
+    margin-right: -700px;
+  }
+  100% {
+    margin-right: 0px;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.rightbox {
+  margin-left: 40%;
+  width: calc(60%);
+  height: calc(100%-4rem);
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rightbox h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--green);
+  font-size: 2rem;
+}
+.input {
+  border: none;
+  outline: none;
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputspan {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  padding: 0px 5px;
+  font-size: 1.5rem;
+  align-items: center;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.inputspan input {
+  padding: 0 20px;
+  width: 80%;
+  height: 2.5rem;
+}
+.icon {
+  color: var(--black);
+  font-size: 1.5rem;
+  opacity: 0.75;
+}
+.form .btn {
+  background-color: var(--green);
+  margin-top: 1rem;
+  width: 30%;
+}
+.btn:active {
+  transform: scaleX(1.15) scaleY(1.25);
+  transition-duration: 10ms;
+}
+.btn:hover {
+  background-color: var(--white);
+  border-color: #6fcf97;
+  color: var(--green);
+  font-weight: 600;
+  border: 2px solid var(--green);
+  cursor: pointer;
+}
+.roundicon {
+  font-size: 2rem;
+  color: #28364e;
+  border-radius: 50%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  opacity: 0.75;
+}
+.container>div > p:nth-child(3) {
+  color: rgb(158, 158, 158);
+
+  margin-bottom: 1rem;
+}
+.leftbox {
+  margin-right: 40%;
+  width: calc(60%);
+  height: calc(100%-4rem);
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem 0 0  1rem;
+}
+.leftbox h2{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--green);
+  font-size: 2rem;
+  
+}
+.forgot{
+  font-size: 1rem;
+  cursor: pointer;
+  color: #28364e;
+  margin: .5rem;
+}
+.forgot:hover{
+  color: var(--green);
+}
+.rightbox{
+  animation: goright 1s forwards;
+  
+}
+.leftbox{
+  backdrop-filter: blur(10px);
+  animation: goleft 1s forwards;
+}
+@keyframes goleft {
+  0%{
+    margin-right: 70%;
+    width: 60%;
+  }
+  50%{
+    width: 50%;
+  }
+  100%{
+    margin-right: 40%;
+    width: 60%;
+  }
+}
+
+@keyframes goright {
+0%{
+  margin-left: 60%;
+  width: 60%;
+}
+50%{
+  width: 50%;
+}
+100%{
+  margin-left: 40%;
+  width: 60%;
+}
+}
+.rightbox{
+  backdrop-filter: blur(10px);
+}

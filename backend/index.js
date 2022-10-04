@@ -11,4 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 require("dotenv").config();
 app.use('/Auth',userRouter)
 app.use(cors())
-app.listen(3000)
+app.listen(8080,async()=>{
+try{
+   await connection
+   console.log("server is running")
+}catch{
+    console.log("Connection error: " )
+}
+})
