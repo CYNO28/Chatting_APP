@@ -1,0 +1,29 @@
+.container {
+  border: 1px solid red;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+.container * {
+  border: 1px solid black;
+}
+.leftdiv {
+  width: 30%;
+}
+.rightdiv {
+  width: 70%;
+}
+.sendcontainer {
+  width: 70%;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+}
+.sendcontainer input {
+  padding: 10px 1rem;
+  width: 80%;
+}
+.sendcontainer button {
+  width: 30%;
+  border: none;
+}
