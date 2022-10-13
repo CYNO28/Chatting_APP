@@ -13,6 +13,9 @@
 .rightdiv {
   width: 70%;
 }
+.Sendbtn{
+  border: none;
+}
 .sendcontainer {
   width: 70%;
   display: flex;

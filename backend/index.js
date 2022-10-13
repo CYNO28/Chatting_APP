@@ -25,12 +25,13 @@ app.use(cors());
 io.on('connection', (socket) => {
     console.log('a user connected');
     socket.on('message', (message) => console.log(message,socket.id));
+     
   })
 
 
 server.listen(8080, async () => {
   try {
-    await connection;
+    await connection
     console.log("server is running");
   } catch {
     console.log("Connection error: ");

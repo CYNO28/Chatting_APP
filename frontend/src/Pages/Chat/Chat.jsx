@@ -34,7 +34,7 @@ setInput(e.target.value)
  }
 const onSubmitHandler=()=>{
     console.log(Input)
-    socket.emit('message', Input)
+    socket.emit('message', {message:Input,id:123})
     setInput('')
 }
   return (
@@ -43,7 +43,7 @@ const onSubmitHandler=()=>{
       <div className={style.rightdiv}>
         <div className={style.sendcontainer}>
           <input value={Input} type="text" onChange={onChangeHandler}/>
-          <button onClick={onSubmitHandler}>Send</button>
+          <button className={style.Sendbtn} onClick={onSubmitHandler}>Send</button>
         </div>
       </div>
     </div>
