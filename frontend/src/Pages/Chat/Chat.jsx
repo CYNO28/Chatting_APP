@@ -41,8 +41,10 @@ const Chat = () => {
     <div className={style.container}>
       <div className={style.leftdiv}>
         <div className={style.userList}>
-        <div className={style.userList}>
-          
+        <div className={style.userBox}>
+          <div className={style.imgBox}>
+            <img src="" alt="" />
+          </div>
         </div>
         </div>
       </div>
