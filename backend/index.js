@@ -31,7 +31,7 @@ io.on('connection', (socket) => {
 
 server.listen(8080, async () => {
   try {
-    await connection
+    await connection;
     console.log("server is running");
   } catch {
     console.log("Connection error: ");
