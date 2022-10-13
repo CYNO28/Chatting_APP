@@ -16,6 +16,10 @@ const UserSchema = new Schema({
   role:{
     type: String,
     required: true
+  },
+  SocketId:{
+    type:String,
+    required:true
   }
 });
 const User = new model("ChatApp_User", UserSchema);

@@ -23,7 +23,8 @@ app.use("/Auth", userRouter);
 app.use(cors());
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
+    console.log('a user connected',socket.id);
+    
     socket.on('message', (message) => console.log(message,socket.id));
      
   })

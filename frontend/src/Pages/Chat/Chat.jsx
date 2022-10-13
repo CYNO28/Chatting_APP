@@ -5,7 +5,7 @@ const socket = io("http://localhost:8080");
 const Chat = () => {
   const [isConnected, setIsConnected] = useState(socket.connected);
   const [lastPong, setLastPong] = useState(null);
-    const [Input,setInput]=useState('')
+  const [Input, setInput] = useState("");
   useEffect(() => {
     socket.on("connect", () => {
       setIsConnected(true);
@@ -29,21 +29,29 @@ const Chat = () => {
     socket.emit("ping");
     socket.emit("message", "hello");
   };
- const onChangeHandler=(e) => {
-setInput(e.target.value)
- }
-const onSubmitHandler=()=>{
-    console.log(Input)
-    socket.emit('message', {message:Input,id:123})
-    setInput('')
-}
+  const onChangeHandler = (e) => {
+    setInput(e.target.value);
+  };
+  const onSubmitHandler = () => {
+    console.log(Input);
+    socket.emit("message", { message: Input, id: "123" });
+    setInput("");
+  };
   return (
     <div className={style.container}>
-      <div className={style.leftdiv}></div>
+      <div className={style.leftdiv}>
+        <div className={style.userList}>
+        <div className={style.userList}>
+          
+        </div>
+        </div>
+      </div>
       <div className={style.rightdiv}>
         <div className={style.sendcontainer}>
-          <input value={Input} type="text" onChange={onChangeHandler}/>
-          <button className={style.Sendbtn} onClick={onSubmitHandler}>Send</button>
+          <input value={Input} type="text" onChange={onChangeHandler} />
+          <button className={style.Sendbtn} onClick={onSubmitHandler}>
+            Send
+          </button>
         </div>
       </div>
     </div>
