@@ -11,6 +11,7 @@ const connection = require("./db");
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
+const ChatRouter = require("./Routes/Chat/Chat.js");
 const io = new Server(server);
 
 
@@ -20,6 +21,7 @@ require("dotenv").config();
 
 
 app.use("/Auth", userRouter);
+app.use("/", ChatRouter);
 app.use(cors());
 
 io.on('connection', (socket) => {

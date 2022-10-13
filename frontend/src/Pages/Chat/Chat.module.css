@@ -1,20 +1,24 @@
+:root {
+  --skyblue: #52fffe;
+  --purpel: #6274cd;
+  --black: #28364e;
+  --white: #ffffff;
+  --green: #6fcf97;
+}
 .container {
-  border: 1px solid red;
   height: 100vh;
   width: 100vw;
   display: flex;
 }
-.container * {
 
-}
 .leftdiv {
   width: 30%;
-  border-right:1px solid blue;
+  border-right: 1px solid var(--green);
 }
 .rightdiv {
   width: 70%;
 }
-.Sendbtn{
+.Sendbtn {
   border: none;
 }
 .sendcontainer {
@@ -26,23 +30,46 @@
 .sendcontainer input {
   padding: 10px 1rem;
   width: 80%;
+  border: none;
+  background-color: rgb(228, 217, 217);
+}
+.sendcontainer input:focus {
+  outline: none;
 }
 .sendcontainer button {
   width: 30%;
+  background-color: var(--green);
   border: none;
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
 }
 .userList {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+.userBox {
+  height: 3.5rem;
+  padding: 8px;
+  display: flex;
 
+  align-items: center;
+  gap: 40px;
+  background-color: var(--green);
+  opacity: 0.75;
 }
-.userBox{
-  height: 4rem;
-  border: 1px solid rgba(0,0,0);
+.imgBox {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 200%;
+  display: flex;
+  align-items: center;
 }
-.imgBox{
+.imgBox img {
   height: 100%;
 }
-.imgBox img{
-  height: 100%;
+.nameBox {
+  font-size: 1.45rem;
+  color: whitesmoke;
 }

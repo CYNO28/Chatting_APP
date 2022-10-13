@@ -20,7 +20,11 @@ const UserSchema = new Schema({
   SocketId:{
     type:String,
     required:true
-  }
+  },
+  friendlist:[{
+    id:String,
+    SocketId:String,
+  }]
 });
 const User = new model("ChatApp_User", UserSchema);
 module.exports = User;

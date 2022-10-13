@@ -6,6 +6,8 @@ const Chat = () => {
   const [isConnected, setIsConnected] = useState(socket.connected);
   const [lastPong, setLastPong] = useState(null);
   const [Input, setInput] = useState("");
+  let user_Name = 'Dinesh Bisht'
+  let img_src = 'https://aui.atlassian.com/aui/latest/docs/images/avatar-person.svg'
   useEffect(() => {
     socket.on("connect", () => {
       setIsConnected(true);
@@ -33,7 +35,7 @@ const Chat = () => {
     setInput(e.target.value);
   };
   const onSubmitHandler = () => {
-    console.log(Input);
+
     socket.emit("message", { message: Input, id: "123" });
     setInput("");
   };
@@ -43,14 +45,18 @@ const Chat = () => {
         <div className={style.userList}>
         <div className={style.userBox}>
           <div className={style.imgBox}>
-            <img src="https://aui.atlassian.com/aui/latest/docs/images/avatar-person.svg" alt="" />
+            <img src={img_src} alt="" />
           </div>
+          <div className={style.nameBox}>{user_Name}</div>
         </div>
         </div>
       </div>
       <div className={style.rightdiv}>
         <div className={style.sendcontainer}>
-          <input value={Input} type="text" onChange={onChangeHandler} />
+          <input value={Input} type="text" onChange={onChangeHandler} onKeyDown={(e)=>{
+            if(e.keyCode =="13")onSubmitHandler();
+           
+          }} />
           <button className={style.Sendbtn} onClick={onSubmitHandler}>
             Send
           </button>
