@@ -5,10 +5,11 @@
   display: flex;
 }
 .container * {
-  border: 1px solid black;
+
 }
 .leftdiv {
   width: 30%;
+  border-right:1px solid blue;
 }
 .rightdiv {
   width: 70%;
@@ -29,4 +30,19 @@
 .sendcontainer button {
   width: 30%;
   border: none;
+}
+.userList {
+display: flex;
+flex-direction: column;
+
+}
+.userBox{
+  height: 4rem;
+  border: 1px solid rgba(0,0,0);
+}
+.imgBox{
+  height: 100%;
+}
+.imgBox img{
+  height: 100%;
 }

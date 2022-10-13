@@ -43,7 +43,7 @@ const Chat = () => {
         <div className={style.userList}>
         <div className={style.userBox}>
           <div className={style.imgBox}>
-            <img src="" alt="" />
+            <img src="https://aui.atlassian.com/aui/latest/docs/images/avatar-person.svg" alt="" />
           </div>
         </div>
         </div>
